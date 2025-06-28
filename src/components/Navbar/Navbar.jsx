@@ -1,12 +1,9 @@
 import React from "react";
 import Container from "../../shared/Container";
-
+import logo from "/logo.png"
 const Navbar = () => {
   const links = (
     <div className="flex items-center flex-col md:flex-row  gap-6 md:gap-8">
-      <a className="font-medium  text-main text-lg" href="">
-        <li>Home </li>
-      </a>
       <a className="font-medium  text-main text-lg" href="">
         <li>About </li>
       </a>
@@ -50,7 +47,7 @@ const Navbar = () => {
                 {links}
             </ul>
           </div>
-          <a className=" text-xl">UR</a>
+          <img className="size-11 ml-3 md:ml-0 rounded-full" src={logo} alt="" />
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
