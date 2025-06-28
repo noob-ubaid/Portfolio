@@ -1,11 +1,13 @@
 import React from "react";
 import Container from "../../shared/Container";
 import { Typewriter } from "react-simple-typewriter";
+import { FaFacebookSquare } from "react-icons/fa";
 import profile from "/Profile.jpg";
 import resume from "/Resume_of_Ubaidur_Rahman.pdf";
 import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { FaArrowDown } from "react-icons/fa6";
+import Virtues from "../Virtues/Virtues";
 const Hero = () => {
   const socialLinks = [
     {
@@ -28,13 +30,15 @@ const Hero = () => {
     },
     {
       id: 3,
-      name: "Email",
-      url: "https://github.com/noob-ubaid",
-      icon: MdOutlineMailOutline,
+      name: "Facebook",
+      url: "https://www.facebook.com/ubaidur.rahman.881781?rdid=KvGRqC7VQ5zQm27c&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1FXDbMmv5i%2F#",
+      icon: FaFacebookSquare,
     },
   ];
   return (
     <Container>
+      <div className="bg-main blur-[100px] hidden md:block  size-36 absolute top-32 right-4"></div>
+      <div className="bg-main blur-[100px] hidden md:block size-36 absolute bottom-24 left-4"></div>
       <div className="flex items-center justify-between flex-col-reverse lg:flex-row gap-12 my-16 md:my-24">
         <div className="flex-1 flex items-center md:items-start justify-center gap-6 flex-col">
           <h2 className="text-4xl font-semibold text-gray-300">Hey, I'm</h2>
@@ -84,7 +88,7 @@ const Hero = () => {
           </div>
           <a
             href={resume}
-            download="Ubaidur_Rahman_Resume.pdf"
+            download="Resume_of_Ubaidur_Rahman.pdf"
             className="bg-main hover:bg-main/80 text-black px-6 py-2 rounded-md font-semibold transition-colors duration-300 mt-4 inline-flex items-center gap-2"
           >
             <FaArrowDown className="w-5 h-5" />
@@ -93,14 +97,24 @@ const Hero = () => {
         </div>
         <div className="flex-1 flex items-center justify-center">
           <img
-            className="rounded-full md:h-[400px] md:w-[400px] shadow-[0px_0px_35px_var(--color-main)] h-[330px] w-[330px] object-cover bg-top"
+            className="rounded-full md:h-[400px] md:w-[400px] shadow-[0px_0px_45px_var(--color-main)] h-[320px] w-[320px] object-cover bg-center"
             src={profile}
             alt=""
           />
         </div>
       </div>
+      {/* marquee  */}
+      <Virtues/>
     </Container>
   );
 };
 
 export default Hero;
+
+
+
+
+
+
+
+
