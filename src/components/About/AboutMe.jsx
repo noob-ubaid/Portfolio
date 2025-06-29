@@ -32,7 +32,7 @@ const AboutMe = () => {
           </p>
         </div>
 
-        <div className="flex flex-1 items-center justify-center">
+        <div className="flex flex-1 items-center border justify-center">
           <Lottie
             animationData={codingAnimation}
             className="md:h-[450px] md:w-[450px] h-[300px] w-[300px]"

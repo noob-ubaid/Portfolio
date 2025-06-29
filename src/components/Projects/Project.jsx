@@ -13,9 +13,9 @@ const Project = ({ project }) => {
     id,
   } = project;
   return (
-    <div className="flex items-center flex-col lg:flex-row border border-main/40 p-6 md:p-8 rounded-md gap-8 md:gap-12">
+    <div className="flex items-center flex-col lg:flex-row border border-main/40 p-4 md:p-8 rounded-md gap-8 md:gap-12">
       <div className="flex-1">
-        <img className="rounded-md md:h-[380px]  h-auto object-cover w-auto " src={img} alt="" />
+        <img className="rounded-md md:h-[400px]  h-auto object-cover w-auto " src={img} alt="" />
        
       </div>
       <div className="flex-1 flex flex-col gap-4">
@@ -38,10 +38,10 @@ const Project = ({ project }) => {
             </span>
           ))}
         </div>
-        <div className="flex items-center gap-6 md:gap-10 mt-2">
+        <div className="flex items-center gap-3 md:gap-10 mt-2">
           <a
             href={githubLink}
-            className="bg-main/20 hover:bg-gray-800 hover:text-main duration-300 flex items-center justify-center flex-row-reverse gap-4 text-center w-full rounded-md px-4 py-3"
+            className="bg-main/20 hover:bg-gray-800 hover:text-main duration-300 flex items-center justify-center flex-row-reverse md:gap-4 gap-2 text-center w-full rounded-md md:px-4 md:py-3 px-2 py-2"
             target="_blank"
           >
             {" "}
@@ -49,7 +49,7 @@ const Project = ({ project }) => {
           </a>
           <a
             href={liveLink}
-            className="bg-main/20 hover:bg-gray-800 hover:text-main duration-300 flex items-center justify-center flex-row-reverse gap-4 text-center w-full rounded-md px-4 py-3"
+            className="bg-main/20 hover:bg-gray-800 hover:text-main duration-300 flex items-center justify-center flex-row-reverse md:gap-4 gap-2 text-center w-full rounded-md md:px-4 md:py-3 px-2 py-2"
             target="_blank"
           >
             {" "}

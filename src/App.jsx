@@ -1,5 +1,6 @@
 import "./App.css";
 import AboutMe from "./components/About/AboutMe";
+import Certificates from "./components/Certificates/Certificates";
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import Projects from "./components/Projects/Projects";
@@ -13,6 +14,7 @@ function App() {
       <AboutMe/>
       <Skills/>
       <Projects/>
+      <Certificates/>
     </>
   );
 }

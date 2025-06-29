@@ -97,7 +97,7 @@ const Hero = () => {
         </div>
         <div className="flex-1 flex items-center justify-center">
           <img
-            className="rounded-full select-none md:h-[400px] md:w-[400px] shadow-[0px_0px_45px_var(--color-main)] h-[320px] w-[320px] object-cover bg-center"
+            className="rounded-full select-none md:h-[400px] md:w-[400px] shadow-[0px_0px_55px_var(--color-main)] h-[320px] w-[320px] object-cover bg-center"
             src={profile}
             alt=""
           />
