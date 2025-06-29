@@ -57,9 +57,9 @@ const Hero = () => {
                 loop={Infinity}
                 cursor
                 cursorStyle="|"
-                typeSpeed={80}
-                deleteSpeed={70}
-                delaySpeed={1000}
+                typeSpeed={90}
+                deleteSpeed={90}
+                delaySpeed={1200}
               />
             </span>
           </p>
@@ -97,7 +97,7 @@ const Hero = () => {
         </div>
         <div className="flex-1 flex items-center justify-center">
           <img
-            className="rounded-full md:h-[400px] md:w-[400px] shadow-[0px_0px_45px_var(--color-main)] h-[320px] w-[320px] object-cover bg-center"
+            className="rounded-full select-none md:h-[400px] md:w-[400px] shadow-[0px_0px_45px_var(--color-main)] h-[320px] w-[320px] object-cover bg-center"
             src={profile}
             alt=""
           />

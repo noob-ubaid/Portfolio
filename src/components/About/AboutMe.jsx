@@ -40,7 +40,7 @@ const AboutMe = () => {
           />
         </div>
       </div>
-      <div className="bg-main blur-[100px] hidden md:block  size-36 absolute top-[1200px] right-2"></div>
+      <div className="bg-main blur-[100px] hidden md:block  size-36 absolute top-[1350px] right-2"></div>
     </Container>
   );
 };
