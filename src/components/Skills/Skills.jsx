@@ -97,16 +97,17 @@ const Skills = () => {
                 initial="hidden"
                 whileInView="show"
                 key={skill.id}
-                className="flex flex-col items-center justify-center transition-transform hover:scale-110 duration-300"
               >
-                {IconComponent ? (
-                  <IconComponent size={40} color={skill.color} />
-                ) : (
-                  <p className="text-red-500">Missing: {skill.icon}</p>
-                )}
-                <p className="mt-2 text-center font-medium text-lg text-gray-200/70">
-                  {skill.skill}
-                </p>
+                <div className="flex flex-col items-center justify-center transition-transform hover:scale-110 duration-300">
+                  {IconComponent ? (
+                    <IconComponent size={40} color={skill.color} />
+                  ) : (
+                    <p className="text-red-500">Missing: {skill.icon}</p>
+                  )}
+                  <p className="mt-2 text-center font-medium text-lg text-gray-200/70">
+                    {skill.skill}
+                  </p>
+                </div>
               </motion.div>
             );
           })}

@@ -96,8 +96,8 @@ const Hero = () => {
               real-world projects and continuously sharpening my skills to
               create user-friendly digital experiences.
             </motion.p>
-            <div className="flex items-center  gap-6">
-              {socialLinks.map((link,index) => {
+            <div className="flex items-center gap-6">
+              {socialLinks.map((link, index) => {
                 const IconComponent = link.icon;
                 return (
                   <motion.div
@@ -105,52 +105,59 @@ const Hero = () => {
                     initial="hidden"
                     whileInView="show"
                     key={link.id}
-                    className="bg-gray-700 p-2 rounded-full animate-wiggle hover:animate-none hover:bg-main/80 duration-300 hover:scale-[1.1] shadow-[0px_0px_17px_var(--color-main)]  transition-all"
                   >
-                    <Tooltip
-                      slotProps={{
-                        tooltip: {
-                          sx: {
-                            color: "#000",
-                            backgroundColor: "#04ecf0",
-                            fontSize: "0.875rem",
-                            borderRadius: "0.375rem",
-                            px: 1,
-                            py: 0.5,
+                    <div className="bg-gray-700 p-2 rounded-full animate-wiggle hover:animate-none hover:bg-main/80 duration-300 hover:scale-[1.1] shadow-[0px_0px_17px_var(--color-main)]  transition-all">
+                      <Tooltip
+                        slotProps={{
+                          tooltip: {
+                            sx: {
+                              color: "#000",
+                              backgroundColor: "#04ecf0",
+                              fontSize: "0.875rem",
+                              borderRadius: "0.375rem",
+                              px: 1,
+                              py: 0.5,
+                            },
                           },
-                        },
-                        arrow: {
-                          sx: {
-                            color: "#04ecf0",
+                          arrow: {
+                            sx: {
+                              color: "#04ecf0",
+                            },
                           },
-                        },
-                      }}
-                      title={link.name}
-                      placement="top"
-                      arrow
-                    >
-                      <a
-                        href={link.url}
-                        rel="noopener noreferrer"
-                        aria-label={link.name}
-                        target="_blank"
-                        className="text-2xl"
+                        }}
+                        title={link.name}
+                        placement="top"
+                        arrow
                       >
-                        <IconComponent />
-                      </a>
-                    </Tooltip>
+                        <a
+                          href={link.url}
+                          rel="noopener noreferrer"
+                          aria-label={link.name}
+                          target="_blank"
+                          className="text-2xl"
+                        >
+                          <IconComponent />
+                        </a>
+                      </Tooltip>
+                    </div>
                   </motion.div>
                 );
               })}
             </div>
-            <a
-              href={resume}
-              download="Resume_of_Ubaidur_Rahman.pdf"
-              className="bg-main hover:bg-main/80 text-black px-6 py-2 rounded-md font-semibold transition-colors duration-300 mt-4 inline-flex items-center gap-2"
+            <motion.div
+              variants={fadeIn("up", 0.15)}
+              initial="hidden"
+              whileInView="show"
             >
-              <FaArrowDown className="w-5 h-5" />
-              Download Resume
-            </a>
+              <a
+                href={resume}
+                download="Resume_of_Ubaidur_Rahman.pdf"
+                className="bg-main hover:bg-main/80 text-black px-6 py-2 rounded-md font-semibold transition-colors duration-300 mt-4 inline-flex items-center gap-2"
+              >
+                <FaArrowDown className="w-5 h-5" />
+                Download Resume
+              </a>
+            </motion.div>
           </div>
           <div className="flex-1 flex items-center justify-center">
             <motion.img
