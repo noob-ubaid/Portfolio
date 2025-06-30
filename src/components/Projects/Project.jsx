@@ -23,7 +23,7 @@ const Project = ({ project }) => {
         <p className="text-gray-300/70">{description}</p>
         <ul className="list-disc list-inside pl-2">
           {features.map((feature) => (
-            <li className="text-gray-300/70">{feature}</li>
+            <li key={feature} className="text-gray-300/70">{feature}</li>
           ))}
         </ul>
         <div className="flex items-center flex-wrap gap-4">

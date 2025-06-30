@@ -1,6 +1,7 @@
 import "./App.css";
 import AboutMe from "./components/About/AboutMe";
 import Certificates from "./components/Certificates/Certificates";
+import Contact from "./components/Contacat/Contact";
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import Projects from "./components/Projects/Projects";
@@ -15,6 +16,7 @@ function App() {
       <Skills/>
       <Projects/>
       <Certificates/>
+      <Contact/>
     </>
   );
 }

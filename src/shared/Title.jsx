@@ -1,11 +1,17 @@
-import React from 'react';
-
-const Title = ({title}) => {
-    return (
-        <h2 className='text-4xl md:text-5xl text-main text-center font-semibold mt-16 mb-10 md:mt-24 md:mb-14'>
-          {title}  
-        </h2>
-    );
+import React from "react";
+import { motion } from "framer-motion";
+import { fadeIn } from "./Variants";
+const Title = ({ title }) => {
+  return (
+    <motion.h2
+      variants={fadeIn("down", 0.11)}
+      initial="hidden"
+      whileInView="show"
+      className="text-4xl md:text-5xl text-main text-center font-semibold pt-24 pb-10 md:pt-24 md:pb-14"
+    >
+      {title}
+    </motion.h2>
+  );
 };
 
 export default Title;

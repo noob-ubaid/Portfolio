@@ -4,6 +4,9 @@ import Title from "../../shared/Title";
 import Project from "./Project";
 import Jobent from "/jobent.png";
 import recipe from "/recipe.png";
+import event from "/event.png";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../shared/Variants";
 const Projects = () => {
   const allProjects = [
     {
@@ -57,17 +60,48 @@ const Projects = () => {
       liveLink: "https://recipe-book-by-ubaid.netlify.app",
       githubLink: "https://github.com/noob-ubaid/Recipe-app",
     },
+    {
+      id: 3,
+      img: event,
+      name: "Event Finder",
+      description:
+        "Event Explorer is a dynamic single-page web app that lets users discover and explore a variety of local events, including conferences, sports, and exhibitions. It helps people stay connected with what's happening around them.",
+      features: [
+        "User can update his profile",
+        "Dynamic page title ",
+        "Forget Password with Gmail redirection",
+        "Authentication using Firebase",
+      ],
+      techStack: [
+        "React js",
+        "Tailwind css",
+        "React Router",
+        "Daisi Ui",
+        "Firebase",
+      ],
+      liveLink: "https://event-finder-by-ubaid.netlify.app/",
+      githubLink: "https://github.com/noob-ubaid/Event-Explorer",
+    },
   ];
   return (
-    <Container>
-      <Title title="Projects" />
-      <div className="flex flex-col gap-10">
-        {allProjects.map((project) => (
-          <Project key={project.id} project={project}></Project>
-        ))}
-      </div>
-      <div className="bg-main blur-[100px] hidden md:block size-36 absolute top-[2000px] left-4"></div>
-    </Container>
+    <div id="projects">
+      <Container>
+        <Title title="Projects" />
+        <div className="flex flex-col gap-10">
+          {allProjects.map((project, index) => (
+            <motion.div
+              variants={fadeIn("up", `0.${index}`)}
+              initial="hidden"
+              whileInView="show"
+              key={project.id}
+            >
+              <Project project={project}></Project>
+            </motion.div>
+          ))}
+        </div>
+        <div className="bg-main blur-[100px] hidden md:block size-36 absolute top-[2000px] left-4"></div>
+      </Container>
+    </div>
   );
 };
 
