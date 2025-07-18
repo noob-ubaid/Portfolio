@@ -15,6 +15,7 @@ const Virtues = () => {
       variants={fadeIn("up", 0.2)}
       initial="hidden"
       whileInView="show"
+      viewport={{ once: true }}
       className="py-4 bg-gray-700 rounded-md"
     >
       <Marquee speed={100} pauseOnHover gradient={false}>

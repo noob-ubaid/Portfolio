@@ -40,25 +40,25 @@ const Hero = () => {
   return (
     <div id="home">
       <Container>
-        <div className="bg-main blur-[100px] hidden md:block  size-36 absolute top-32 right-4"></div>
-        <div className="bg-main blur-[100px] hidden md:block size-36 absolute bottom-24 left-4"></div>
         <div className="flex items-center justify-between flex-col-reverse lg:flex-row gap-12 py-16 md:py-28">
-          <div className="flex-1 flex items-center md:items-start justify-center gap-6 flex-col">
+          <div className="flex-1 flex items-center md:items-start justify-center gap-4 md:gap-6 flex-col">
             <motion.h2
               variants={fadeIn("down", 0.11)}
               initial="hidden"
               whileInView="show"
+              viewport={{ once: true }}
               id="hey"
-              className="text-4xl hero-text font-semibold text-gray-300"
+              className="md:text-4xl text-3xl hero-text font-semibold text-gray-300"
             >
               Hey, I'm
             </motion.h2>
             <motion.h1
-              variants={fadeIn("right", 0.13)}
+              variants={fadeIn("up", 0.13)}
               initial="hidden"
               whileInView="show"
+              viewport={{ once: true }}
               id="name"
-              className=" font-bold hero-text text-4xl md:text-5xl text-main"
+              className=" font-bold hero-text text-3xl md:text-4xl lg:text-5xl text-main"
             >
               Ubaidur Rahman
             </motion.h1>
@@ -66,15 +66,16 @@ const Hero = () => {
               variants={fadeIn("up", 0.15)}
               initial="hidden"
               whileInView="show"
-              className="md:text-4xl hero-text text-3xl text-gray-300 font-semibold"
+              viewport={{ once: true }}
+              className="md:text-4xl hero-text text-xl text-gray-300 font-semibold"
             >
               I'm a
-              <span className="ml-3 text-main">
+              <span className="md:ml-3 ml-2 text-main">
                 <Typewriter
                   words={[
-                    "MERN Stack developer",
-                    "Frontend developer",
-                    "Backend developer",
+                    "MERN Stack Developer",
+                    "Frontend Developer",
+                    "Backend Developer",
                   ]}
                   loop={Infinity}
                   cursor
@@ -88,6 +89,7 @@ const Hero = () => {
             <motion.p
               variants={fadeIn("up", 0.27)}
               initial="hidden"
+              viewport={{ once: true }}
               whileInView="show"
               className="hero-text text-gray-300/70"
             >
@@ -104,6 +106,7 @@ const Hero = () => {
                     variants={fadeIn("up", `0.${index}`)}
                     initial="hidden"
                     whileInView="show"
+                    viewport={{ once: true }}
                     key={link.id}
                   >
                     <div className="bg-gray-700 p-2 rounded-full animate-wiggle hover:animate-none hover:bg-main/80 duration-300 hover:scale-[1.1] shadow-[0px_0px_17px_var(--color-main)]  transition-all">
@@ -148,6 +151,7 @@ const Hero = () => {
               variants={fadeIn("up", 0.15)}
               initial="hidden"
               whileInView="show"
+              viewport={{ once: true }}
             >
               <a
                 href={resume}
@@ -164,6 +168,7 @@ const Hero = () => {
               variants={fadeIn("up", 0.3)}
               initial="hidden"
               whileInView="show"
+              viewport={{ once: true }}
               className="rounded-full select-none md:h-[400px] md:w-[400px] shadow-[0px_0px_55px_var(--color-main)] h-[320px] w-[320px] object-cover bg-center"
               src={profile}
               alt=""

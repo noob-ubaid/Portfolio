@@ -16,7 +16,9 @@
 @plugin "daisyui";
 body {
   font-family: "Inter", sans-serif;
+  /* overflow-x: hidden; */
 }
 html {
   scroll-behavior: smooth;
+  /* overflow-x: hidden; */
 }

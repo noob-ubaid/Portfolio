@@ -4,15 +4,42 @@ import Title from "../../shared/Title";
 import Project from "./Project";
 import Jobent from "/jobent.png";
 import recipe from "/recipe.png";
-import event from "/event.png";
+import devdit from "/devdit.png";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../shared/Variants";
 const Projects = () => {
   const allProjects = [
     {
+      id: 3,
+      img: devdit,
+      name: "Devdit",
+      description:
+        "ForumHub is a dynamic single-page web app that lets users create, discover, and engage in discussions on a variety of topics. It helps people share knowledge and stay connected with community conversations.",
+      features: [
+        "Role based access (user and admin)",
+        "A user can post 5 posts.if he want to posts more than 5 he has to pay. ",
+        "Users can comment on posts and report inappropriate comments.",
+        "User can upvote , downvote and share the post in Whatsapp and Facebook",
+      ],
+      techStack: [
+        "React JS",
+        "Tailwind css",
+        "React Router",
+        "Tanstack Query",
+        "Stripe",
+        "JWT",
+        "Express JS",
+        "MongoDB",
+        "Axios JS",
+        "Firebase",
+      ],
+      liveLink: "https://dev-forum-by-ubaid.netlify.app",
+      githubLink: "https://github.com/noob-ubaid/devdit-client",
+    },
+    {
       id: 1,
       img: Jobent,
-      name: "Jobent",
+      name: "Jovent",
       description:
         "Jobent is a community-driven platform for discovering, creating, and joining local social development events. It helps people connect with like-minded individuals while contributing to positive change in their communities.",
       features: [
@@ -60,28 +87,7 @@ const Projects = () => {
       liveLink: "https://recipe-book-by-ubaid.netlify.app",
       githubLink: "https://github.com/noob-ubaid/Recipe-app",
     },
-    {
-      id: 3,
-      img: event,
-      name: "Event Finder",
-      description:
-        "Event Explorer is a dynamic single-page web app that lets users discover and explore a variety of local events, including conferences, sports, and exhibitions. It helps people stay connected with what's happening around them.",
-      features: [
-        "User can update his profile",
-        "Dynamic page title ",
-        "Forget Password with Gmail redirection",
-        "Authentication using Firebase",
-      ],
-      techStack: [
-        "React js",
-        "Tailwind css",
-        "React Router",
-        "Daisi Ui",
-        "Firebase",
-      ],
-      liveLink: "https://event-finder-by-ubaid.netlify.app/",
-      githubLink: "https://github.com/noob-ubaid/Event-Explorer",
-    },
+    
   ];
   return (
     <div id="projects">
@@ -93,13 +99,13 @@ const Projects = () => {
               variants={fadeIn("up", `0.${index}`)}
               initial="hidden"
               whileInView="show"
+              viewport={{ once: true }}
               key={project.id}
             >
               <Project project={project}></Project>
             </motion.div>
           ))}
         </div>
-        <div className="bg-main blur-[100px] hidden md:block size-36 absolute top-[2000px] left-4"></div>
       </Container>
     </div>
   );

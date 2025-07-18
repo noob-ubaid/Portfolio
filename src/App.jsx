@@ -1,7 +1,7 @@
 import "./App.css";
 import AboutMe from "./components/About/AboutMe";
 import Certificates from "./components/Certificates/Certificates";
-import Contact from "./components/Contacat/Contact";
+import Contact from "./components/Contact/Contact";
 import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import Projects from "./components/Projects/Projects";
@@ -11,12 +11,14 @@ function App() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <AboutMe/>
-      <Skills/>
-      <Projects/>
-      <Certificates/>
-      <Contact/>
+      <div className="px-4 md:px-8 2xl:px-0">
+        <Hero />
+        <AboutMe />
+        <Skills />
+        <Projects />
+        <Certificates />
+        <Contact />
+      </div>
     </>
   );
 }

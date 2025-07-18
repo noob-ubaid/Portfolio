@@ -22,9 +22,10 @@ const Certificates = () => {
       <Container>
         <Title title="Certificate" />
         <motion.p
-          variants={fadeIn("right", 0.15)}
+          variants={fadeIn("up", 0.15)}
           initial="hidden"
           whileInView="show"
+          viewport={{ once: true }}
           className="text-gray-300/70 max-w-4xl mx-auto text-center"
         >
           I believe in continuous learning to sharpen and strengthen my web
@@ -36,6 +37,7 @@ const Certificates = () => {
           variants={fadeIn("up", 0.15)}
           initial="hidden"
           whileInView="show"
+          viewport={{ once: true }}
           className="flex items-center flex-col mt-6 md:mt-10 lg:flex-row border border-main/40 p-4 md:p-8 rounded-md gap-8 md:gap-12"
         >
           <div className="flex-1">
@@ -47,7 +49,7 @@ const Certificates = () => {
           </div>
           <div className="flex-1 flex flex-col gap-4">
             <h2 className="text-3xl font-semibold text-gray-300">
-              Frontend Web Development
+             Journey of Frontend Web Development
             </h2>
             <p className="text-gray-300/70">
               Completed a frontend web development course at Hablu Programmer,

@@ -86,14 +86,16 @@ const Contact = () => {
               variants={fadeIn("down", 0.15)}
               initial="hidden"
               whileInView="show"
+              viewport={{ once: true }}
               className="text-3xl md:text-4xl font-bold text-main"
             >
               Get in Touch
             </motion.h2>
             <motion.p
-              variants={fadeIn("right", 0.15)}
+              variants={fadeIn("up", 0.15)}
               initial="hidden"
               whileInView="show"
+              viewport={{ once: true }}
               className="text-gray-300/70 text-center md:text-left max-w-[540px]"
             >
               Don’t hesitate to get in touch—whether it’s a new project idea or
@@ -107,6 +109,7 @@ const Contact = () => {
                   variants={fadeIn("up", `0.${index}`)}
                   initial="hidden"
                   whileInView="show"
+                  viewport={{ once: true }}
                   className="flex items-center gap-6"
                   key={call.id}
                 >
@@ -129,6 +132,7 @@ const Contact = () => {
             variants={fadeIn("up", 0.15)}
             initial="hidden"
             whileInView="show"
+            viewport={{ once: true }}
             ref={form}
             onSubmit={sendEmail}
             className="flex-1 flex flex-col gap-4 bg-gray-800/40 p-6 rounded-xl backdrop-blur"
