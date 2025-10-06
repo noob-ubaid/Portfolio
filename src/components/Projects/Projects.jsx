@@ -14,7 +14,7 @@ const Projects = () => {
       img: devdit,
       name: "Devdit",
       description:
-        "ForumHub is a dynamic single-page web app that lets users create, discover, and engage in discussions on a variety of topics. It helps people share knowledge and stay connected with community conversations.",
+        "Devdit is a dynamic single-page web app that lets users create, discover, and engage in discussions on a variety of topics. It helps people share knowledge and stay connected with community conversations.",
       features: [
         "Role based access (user and admin)",
         "A user can post 5 posts.if he want to posts more than 5 he has to pay. ",

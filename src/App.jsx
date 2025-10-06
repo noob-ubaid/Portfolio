@@ -6,11 +6,13 @@ import Hero from "./components/Hero/Hero";
 import Navbar from "./components/Navbar/Navbar";
 import Projects from "./components/Projects/Projects";
 import Skills from "./components/Skills/Skills";
+import SmoothCursor from "./shared/CustomCursor";
 
 function App() {
   return (
     <>
       <Navbar />
+      <SmoothCursor />
       <div className="px-4 md:px-8 2xl:px-0">
         <Hero />
         <AboutMe />

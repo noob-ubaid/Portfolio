@@ -48,7 +48,6 @@ const Navbar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
   const links = (
     <div className="flex items-center flex-col md:flex-row gap-2 md:gap-2">
       {[
@@ -106,7 +105,7 @@ const Navbar = () => {
                 {links}
               </ul>
             </div>
-            <div className="logo">
+            <div className="logo text-3xl">
               <img
                 className="size-11 ml-3 md:ml-0  rounded-full"
                 src={logo}

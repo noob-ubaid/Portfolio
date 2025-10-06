@@ -24,7 +24,6 @@ import {
   SiNextdotjs,
   SiTypescript,
 } from "react-icons/si";
-import { fadeIn } from "../../shared/Variants";
 
 const Skills = () => {
   const skills = [
@@ -66,45 +65,79 @@ const Skills = () => {
     SiTypescript,
   };
 
+  // Container animation (staggered children)
+  const container = {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: 0.15 },
+    },
+  };
+
+  // Each skill card animation
+  const item = {
+    hidden: { opacity: 0, y: 50, scale: 0.8 },
+    show: {
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: { type: "spring", stiffness: 100, damping: 12 },
+    },
+  };
+
   return (
     <div id="skills">
       <Container>
         <Title title="Skills" />
+
+        {/* Subtitle */}
         <motion.p
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-gray-300/70 max-w-3xl mx-auto mb-8 md:mb-14 text-center"
+        >
+          I not only work with these technologies but excel in using them with
+          best practices to deliver high-quality results. I have been working
+          with all these skills to build most of my projects.
+        </motion.p>
+
+        {/* Skills Grid */}
+        <motion.div
+          variants={container}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          variants={fadeIn("down", 0.24)}
-          className="text-gray-300/70 max-w-3xl mx-auto mb-8 md:mb-14 text-center"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8"
         >
-          I not only work with these technologies but excel in using them with best practices to deliver high-quality results. I have been working with all these skills to build most of the projects
-        </motion.p>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 place-content-center gap-x-4 md:gap-x-14 gap-y-16">
-          {skills.map((skill, index) => {
+          {skills.map((skill) => {
             const IconComponent = icons[skill.icon];
             return (
               <motion.div
-                variants={fadeIn("up", `0.${index}`)}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
+                variants={item}
+                whileHover={{
+                  scale: 1.1,
+                  rotate: 3,
+                  boxShadow: `0 0px 20px ${skill.color}`,
+                }}
+                className="rounded-xl"
+                whileTap={{ scale: 0.95 }}
                 key={skill.id}
               >
-                <div className="flex flex-col items-center justify-center transition-transform hover:scale-110 duration-300">
+                <motion.div className="flex flex-col items-center justify-center bg-black/10 border hover:border-none border-gray-700 rounded-xl p-4 sm:p-6 transition-all duration-300 hover:border-main/60">
                   {IconComponent ? (
-                    <IconComponent size={40} color={skill.color} />
+                    <IconComponent size={45} color={skill.color} />
                   ) : (
                     <p className="text-red-500">Missing: {skill.icon}</p>
                   )}
-                  <p className="mt-2 text-center font-medium text-lg text-gray-200/70">
+                  <p className="mt-3 text-center font-medium text-base sm:text-lg text-gray-200/80">
                     {skill.skill}
                   </p>
-                </div>
+                </motion.div>
               </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </Container>
     </div>
   );
