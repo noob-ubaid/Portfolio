@@ -6,25 +6,12 @@ import Container from "../../shared/Container";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
-  const tl = gsap.timeline();
+
   useGSAP(() => {
-    gsap.from(".logo", {
-      opacity: 0,
-      y: -20,
-      duration: 0.1,
-    });
-    tl.from(".nav", {
-      opacity: 0,
-      y: -10,
-      duration: 0.3,
-      stagger: 0.2,
-    });
-    tl.from(".contact", {
-      opacity: 0,
-      y: -10,
-      duration: 0.4,
-      stagger: 0.2,
-    });
+    gsap.from(".logo", { opacity: 0, y: -20, duration: 0.1 });
+    const tl = gsap.timeline();
+    tl.from(".nav", { opacity: 0, y: -10, duration: 0.3, stagger: 0.2 });
+    tl.from(".contact", { opacity: 0, y: -10, duration: 0.4, stagger: 0.2 });
   }, []);
 
   useEffect(() => {
@@ -45,9 +32,16 @@ const Navbar = () => {
       setActiveSection(currentSection);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  const handleNavClick = (id) => {
+  const scrollEl = document.querySelector("#scroll-container").__locomotiveScroll;
+  if (scrollEl) {
+    scrollEl.scrollTo(document.getElementById(id));
+  }
+};
+
   const links = (
     <div className="flex items-center flex-col md:flex-row gap-2 md:gap-2">
       {[
@@ -60,10 +54,10 @@ const Navbar = () => {
         <a
           key={id}
           href={`#${id}`}
-          className={`font-medium text-lg transition-colors duration-300 ${
+          className={`font-medium text-lg transition-colors duration-300 nav px-4 py-2 rounded-md ${
             activeSection === id
-              ? "text-main font-semibold w-full md:w-fit text-center nav px-4 py-2 duration-500 bg-gray-600/30 backdrop-blur-2xl rounded-md"
-              : "text-gray-300 hover:text-main/80 rounded-md nav px-4 py-2"
+              ? "text-main font-semibold bg-gray-600/30 backdrop-blur-2xl"
+              : "text-gray-300 hover:text-main/80"
           }`}
         >
           <li className="list-none capitalize">{label}</li>
@@ -73,54 +67,32 @@ const Navbar = () => {
   );
 
   return (
-    <div className="bg-gray-800/80 sticky top-0 z-50 backdrop-blur">
+    <div className="sticky top-0 left-0 w-full z-50 bg-gray-800/80 backdrop-blur-md border-b border-gray-700">
       <Container>
         <div className="navbar py-2.5">
           <div className="navbar-start">
             <div className="dropdown hover:bg-gray-800">
-              <div
-                tabIndex={0}
-                role="button"
-                className="btn btn-ghost lg:hidden"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="h-5 w-5"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h8m-8 6h16"
-                  />
+              <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
                 </svg>
               </div>
-              <ul
-                tabIndex={0}
-                className="menu menu-sm dropdown-content bg-gray-800 rounded-box z-10 mt-3 w-52 p-2 shadow"
-              >
+              <ul tabIndex={0} className="menu menu-sm dropdown-content bg-gray-800 rounded-box z-10 mt-3 w-52 p-2 shadow">
                 {links}
               </ul>
             </div>
+
             <div className="logo text-3xl">
-              <img
-                className="size-11 ml-3 md:ml-0  rounded-full"
-                src={logo}
-                alt="logo"
-              />
+              <img className="size-11 ml-3 md:ml-0 rounded-full" src={logo} alt="logo" />
             </div>
           </div>
+
           <div className="navbar-center hidden lg:flex">
             <ul className="menu menu-horizontal px-1">{links}</ul>
           </div>
+
           <div className="navbar-end">
-            <a
-              href="#contact"
-              className="text-black px-5 contact py-2.5 rounded-full bg-main"
-            >
+            <a href="#contact" className="text-black px-5 contact py-2.5 rounded-full bg-main">
               Contact
             </a>
           </div>
@@ -131,3 +103,12 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+
+
+
+
+
+

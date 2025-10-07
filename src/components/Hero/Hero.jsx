@@ -40,7 +40,7 @@ const Hero = () => {
   return (
     <div id="home">
       <Container>
-        <div className="flex items-center justify-between flex-col-reverse lg:flex-row gap-12 py-16 md:py-28">
+        <div className="flex items-center justify-between flex-col-reverse lg:flex-row gap-12 py-16 md:py-28 ">
           <div className="flex-1 flex items-center md:items-start justify-center gap-4 md:gap-6 flex-col">
             <motion.h2
               variants={fadeIn("down", 0.11)}

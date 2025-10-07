@@ -15,8 +15,9 @@
 }
 @plugin "daisyui";
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 html {
   scroll-behavior: smooth;
 }
+

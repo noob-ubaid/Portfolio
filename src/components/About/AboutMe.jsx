@@ -79,12 +79,12 @@ const AboutMe = () => {
             />
           </motion.div>
         </div>
-        {/* <div className="bg-main blur-[100px] hidden md:block  size-36 absolute top-[1350px] right-2"></div>
-        <div className="bg-main blur-[100px] hidden md:block  size-28 absolute top-[2550px] right-6"></div>
-        <div className="bg-main blur-[100px] hidden md:block  size-28 absolute top-[3150px] left-6"></div>
-        <div className="bg-main blur-[100px] hidden md:block  size-28 absolute top-[3650px] right-6"></div>
-        <div className="bg-main blur-[100px] hidden md:block  size-28 absolute top-[4450px] left-6"></div>
-        <div className="bg-main blur-[100px] hidden md:block  size-28 absolute top-[4950px] right-6"></div> */}
+        <div className="bg-main blur-[200px] hidden md:block  size-36 absolute top-[1350px] right-2"></div>
+        <div className="bg-main blur-[200px] hidden md:block  size-28 absolute top-[2550px] right-6"></div>
+        <div className="bg-main blur-[200px] hidden md:block  size-28 absolute top-[3150px] left-6"></div>
+        <div className="bg-main blur-[200px] hidden md:block  size-28 absolute top-[3650px] right-6"></div>
+        <div className="bg-main blur-[200px] hidden md:block  size-28 absolute top-[4450px] left-6"></div>
+        <div className="bg-main blur-[200px] hidden md:block  size-28 absolute top-[4950px] right-6"></div>
       </Container>
     </div>
   );

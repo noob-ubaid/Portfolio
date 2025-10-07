@@ -8,6 +8,7 @@ import emailjs from "@emailjs/browser";
 import Swal from "sweetalert2";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../shared/Variants";
+import toast from "react-hot-toast";
 
 const Contact = () => {
   const form = useRef();
@@ -22,11 +23,7 @@ const Contact = () => {
     const message = formData.get("message").trim();
 
     if (!name || !email || !subject || !message) {
-      Swal.fire({
-        icon: "error",
-        title: "Oops...",
-        text: "Fill up the contact form!",
-      });
+     toast.error("Fill up the contact form!")
       return;
     }
 
@@ -39,10 +36,7 @@ const Contact = () => {
       )
       .then(
         () => {
-          Swal.fire({
-            title: "Your email has been sent!",
-            icon: "success",
-          });
+          toast.success("Email has been sent!")
           form.current.reset();
         },
         (error) => {

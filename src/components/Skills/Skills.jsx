@@ -85,7 +85,7 @@ const Skills = () => {
   };
 
   return (
-    <div id="skills">
+    <div id="skills" >
       <Container>
         <Title title="Skills" />
 
