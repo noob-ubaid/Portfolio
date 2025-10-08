@@ -23,7 +23,7 @@ const Contact = () => {
     const message = formData.get("message").trim();
 
     if (!name || !email || !subject || !message) {
-     toast.error("Fill up the contact form!")
+      toast.error("Fill up the contact form!");
       return;
     }
 
@@ -36,7 +36,7 @@ const Contact = () => {
       )
       .then(
         () => {
-          toast.success("Email has been sent!")
+          toast.success("Email has been sent!");
           form.current.reset();
         },
         (error) => {
@@ -104,7 +104,7 @@ const Contact = () => {
                   initial="hidden"
                   whileInView="show"
                   viewport={{ once: true }}
-                  className="flex items-center gap-6"
+                  className="flex items-center gap-3 sm:gap-6"
                   key={call.id}
                 >
                   <div className="bg-gray-800 shadow-[0px_0px_15px_var(--color-main)] animate-wiggle p-3 rounded-md text-main">
@@ -114,7 +114,9 @@ const Contact = () => {
                     <p className="text-xl font-semibold text-gray-300">
                       {call.name}
                     </p>
-                    <p className="text-gray-300/70 mt-1 text-lg">{call.call}</p>
+                    <p className="text-gray-300/70 mt-1 text-base sm:text-lg text-wrap">
+                      {call.call}
+                    </p>
                   </div>
                 </motion.div>
               ))}
@@ -129,7 +131,7 @@ const Contact = () => {
             viewport={{ once: true }}
             ref={form}
             onSubmit={sendEmail}
-            className="flex-1 flex flex-col gap-4 bg-gray-800/40 p-6 rounded-xl backdrop-blur"
+            className="flex-1 flex flex-col gap-4 bg-gray-800/40 p-4 rounded-xl backdrop-blur"
           >
             <input
               type="text"

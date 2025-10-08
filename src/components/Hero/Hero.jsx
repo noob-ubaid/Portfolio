@@ -1,6 +1,5 @@
 import React from "react";
 import Container from "../../shared/Container";
-import { Typewriter } from "react-simple-typewriter";
 import { FaFacebookSquare } from "react-icons/fa";
 import profile from "/Profile.jpg";
 import resume from "/Resume_of_Ubaidur_Rahman.pdf";
@@ -10,7 +9,13 @@ import Tooltip from "@mui/material/Tooltip";
 import Virtues from "../Virtues/Virtues";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../shared/Variants";
+import { FlipWords } from "../../shared/FlipWords";
 const Hero = () => {
+  const words = [
+    "MERN Stack Developer",
+    "Frontend Developer",
+    "Backend Developer",
+  ];
   const socialLinks = [
     {
       id: 1,
@@ -69,22 +74,8 @@ const Hero = () => {
               viewport={{ once: true }}
               className="md:text-4xl hero-text text-xl text-gray-300 font-semibold"
             >
-              I'm a
-              <span className="md:ml-3 ml-2 text-main">
-                <Typewriter
-                  words={[
-                    "MERN Stack Developer",
-                    "Frontend Developer",
-                    "Backend Developer",
-                  ]}
-                  loop={Infinity}
-                  cursor
-                  cursorStyle="|"
-                  typeSpeed={90}
-                  deleteSpeed={90}
-                  delaySpeed={1200}
-                />
-              </span>
+              I'm a <FlipWords words={words} />
+             
             </motion.p>
             <motion.p
               variants={fadeIn("up", 0.27)}
