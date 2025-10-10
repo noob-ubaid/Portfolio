@@ -10,7 +10,6 @@ import Contact from "./components/Contact/Contact";
 import "./App.css";
 
 export default function App() {
-
   return (
     <>
       <Navbar />
@@ -26,4 +25,3 @@ export default function App() {
     </>
   );
 }
-

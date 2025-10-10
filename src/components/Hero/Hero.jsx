@@ -10,12 +10,14 @@ import Virtues from "../Virtues/Virtues";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../shared/Variants";
 import { FlipWords } from "../../shared/FlipWords";
+import { TextGenerateEffect } from "../../shared/TextAnimationEffect";
 const Hero = () => {
   const words = [
     "MERN Stack Developer",
     "Frontend Developer",
     "Backend Developer",
   ];
+  const animatedWords = `I’m a passionate MERN Stack Developer with a focus on building clean, responsive web applications. I love turning ideas into real-world projects and continuously sharpening my skills to create user-friendly digital experiences.`;
   const socialLinks = [
     {
       id: 1,
@@ -72,23 +74,19 @@ const Hero = () => {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="md:text-4xl hero-text text-xl text-gray-300 font-semibold"
+              className="md:text-4xl hero-text text-xl text-gray-300 font-semibold overflow-hidden relative"
             >
               I'm a <FlipWords words={words} />
-             
             </motion.p>
-            <motion.p
+            <motion.div
               variants={fadeIn("up", 0.27)}
               initial="hidden"
               viewport={{ once: true }}
               whileInView="show"
-              className="hero-text text-gray-300/70"
+              className="hero-text"
             >
-              I’m a passionate MERN Stack Developer with a focus on building
-              clean, responsive web applications. I love turning ideas into
-              real-world projects and continuously sharpening my skills to
-              create user-friendly digital experiences.
-            </motion.p>
+              <TextGenerateEffect words={animatedWords} />
+            </motion.div>
             <div className="flex items-center gap-6">
               {socialLinks.map((link, index) => {
                 const IconComponent = link.icon;
