@@ -70,7 +70,7 @@ const SmoothCursor = ({ scroll }) => {
 
       {/* Middle ring */}
       <motion.div
-        className="fixed top-0 left-0 z-[9998] w-10 h-10 rounded-full border border-main/30 backdrop-blur-md shadow-[0_0_10px_rgba(255,255,255,0.3)] pointer-events-none"
+        className="fixed top-0 left-0 z-[9998] w-6 h-6 rounded-full border border-main/30 backdrop-blur-md shadow-[0_0_10px_rgba(255,255,255,0.3)] pointer-events-none"
         style={{
           x: circleX,
           y: circleY,
@@ -86,7 +86,7 @@ const SmoothCursor = ({ scroll }) => {
 
       {/* Inner dot */}
       <motion.div
-        className="fixed top-0 left-0 z-[9999] w-3 h-3 rounded-full bg-main shadow-[0_0_8px_rgba(255,255,255,0.4)] pointer-events-none"
+        className="fixed top-0 left-0 z-[9999] w-2 h-2 rounded-full bg-main shadow-[0_0_8px_rgba(255,255,255,0.4)] pointer-events-none"
         style={{ x: innerX, y: innerY, translateX: "-50%", translateY: "-50%" }}
         animate={{ scale: isHovering ? 1.6 : 1 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}

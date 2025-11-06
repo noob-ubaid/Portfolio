@@ -8,11 +8,21 @@ import Certificates from "./components/Certificates/Certificates";
 import Contact from "./components/Contact/Contact";
 
 import "./App.css";
+import { useEffect, useState } from "react";
+import Loader from "./shared/Loader";
 
 export default function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIsLoading(false);
+    }, 3000);
+    return () => clearInterval(timer);
+  }, []);
   return (
     <>
-      <Navbar />
+      {isLoading && <Loader />}
+      {!isLoading && <div><Navbar />
       <SmoothCursor scroll={scroll} />
       <div className="px-4 md:px-8 2xl:px-0">
         <Hero />
@@ -21,7 +31,7 @@ export default function App() {
         <Projects />
         <Certificates />
         <Contact />
-      </div>
+      </div></div>}
     </>
   );
 }

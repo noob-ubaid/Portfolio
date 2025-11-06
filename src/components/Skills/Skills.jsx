@@ -1,142 +1,234 @@
 import Title from "../../shared/Title";
 import Container from "../../shared/Container";
 import { motion } from "framer-motion";
-import { TbBrandFramerMotion } from "react-icons/tb";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJsSquare,
-  FaReact,
-  FaGitAlt,
-  FaGithub,
-  FaNodeJs,
-} from "react-icons/fa";
-import {
-  SiReactquery,
-  SiRedux,
-  SiExpress,
-  SiMongodb,
-  SiFirebase,
-  SiJsonwebtokens,
-  SiAxios,
-  SiReactrouter,
-  SiTailwindcss,
-  SiNextdotjs,
-  SiTypescript,
-} from "react-icons/si";
 
 const Skills = () => {
-  const skills = [
-    { id: 1, skill: "HTML", icon: "FaHtml5", color: "#E34F26" },
-    { id: 2, skill: "CSS", icon: "FaCss3Alt", color: "#1572B6" },
-    { id: 3, skill: "JavaScript", icon: "FaJsSquare", color: "#F7DF1E" },
-    { id: 4, skill: "React JS", icon: "FaReact", color: "#61DAFB" },
-    { id: 5, skill: "Next JS", icon: "SiNextdotjs", color: "#fff" },
-    { id: 6, skill: "TypeScript", icon: "SiTypescript", color: "#3178C6" },
-    { id: 7, skill: "Tailwind CSS", icon: "SiTailwindcss", color: "#06B6D4" },
-    { id: 8, skill: "TanStack Query", icon: "SiReactquery", color: "#FF4154" },
-    { id: 9, skill: "Express JS", icon: "SiExpress", color: "#F7F7F7" },
-    { id: 10, skill: "Node JS", icon: "FaNodeJs", color: "#339933" },
-    { id: 11, skill: "MongoDB", icon: "SiMongodb", color: "#47A248" },
-    { id: 12, skill: "React Router", icon: "SiReactrouter", color: "#CA4245" },
-    { id: 13, skill: "Git", icon: "FaGitAlt", color: "#F05032" },
-    { id: 14, skill: "GitHub", icon: "FaGithub", color: "#FFFFFF" },
+  const skillCategories = [
+    {
+      category: "Frontend Core",
+      color: "from-cyan-400 to-blue-500",
+      borderColor: "border-cyan-500/30",
+      skills: [
+        { name: "HTML", level: 95 },
+        { name: "CSS", level: 90 },
+        { name: "JavaScript", level: 80 },
+        { name: "TypeScript", level: 80 },
+      ],
+    },
+    {
+      category: "Frameworks & Libraries",
+      color: "from-cyan-400 to-purple-500",
+      borderColor: "border-cyan-500/30",
+      skills: [
+        { name: "React", level: 85 },
+        { name: "Next.js", level: 75 },
+        { name: "Tailwind CSS", level: 92 },
+        { name: "Framer Motion", level: 75 },
+      ],
+    },
+    {
+      category: "Backend & Tools",
+      color: "from-cyan-400 to-emerald-500",
+      borderColor: "border-cyan-500/30",
+      skills: [
+        { name: "Node.js", level: 70 },
+        { name: "Express", level: 75 },
+        { name: "MongoDB", level: 70 },
+        { name: "Git & GitHub", level: 85 },
+      ],
+    },
   ];
 
-  const icons = {
-    FaHtml5,
-    FaCss3Alt,
-    FaJsSquare,
-    FaReact,
-    FaGitAlt,
-    FaGithub,
-    FaNodeJs,
-    SiRedux,
-    TbBrandFramerMotion,
-    SiReactquery,
-    SiExpress,
-    SiMongodb,
-    SiReactrouter,
-    SiTailwindcss,
-    SiFirebase,
-    SiJsonwebtokens,
-    SiAxios,
-    SiNextdotjs,
-    SiTypescript,
-  };
+  const SkillBar = ({ skill, color }) => (
+    <div className="mb-6">
+      <div className="flex justify-between items-center mb-3">
+        <span className="text-sm font-semibold text-gray-200">
+          {skill.name}
+        </span>
+        <motion.span
+          className="text-xs font-bold text-main bg-cyan-400/10 px-2 py-1 rounded-full"
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.8 }}
+          viewport={{ once: true }}
+        >
+          {skill.level}%
+        </motion.span>
+      </div>
+      <div className="h-3 bg-gray-800 rounded-full overflow-hidden relative">
+        <motion.div
+          className={`h-full bg-gradient-to-r ${color} rounded-full relative overflow-hidden`}
+          initial={{ width: 0 }}
+          whileInView={{ width: `${skill.level}%` }}
+          transition={{ duration: 1.5, ease: "easeOut", delay: 0.3 }}
+          viewport={{ once: true }}
+        >
+          {/* Shimmer effect */}
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+            initial={{ x: "-100%" }}
+            whileInView={{ x: "100%" }}
+            transition={{ duration: 2, delay: 1, repeat: 1, repeatDelay: 1 }}
+            viewport={{ once: true }}
+          />
+        </motion.div>
+      </div>
+    </div>
+  );
 
-  // Container animation (staggered children)
-  const container = {
-    hidden: {},
-    show: {
-      transition: { staggerChildren: 0.15 },
-    },
-  };
-
-  // Each skill card animation
-  const item = {
-    hidden: { opacity: 0, y: 50, scale: 0.8 },
-    show: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: { type: "spring", stiffness: 100, damping: 12 },
-    },
-  };
+  const SkillPill = ({ skill, index }) => (
+    <motion.div
+      className="px-4 py-3 rounded-full bg-gray-800/60 backdrop-blur-sm border border-cyan-500/20 text-gray-200 text-sm font-medium hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-200 cursor-default group relative overflow-hidden"
+      whileHover={{
+        scale: 1.05,
+        y: -2,
+      }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      viewport={{ once: true }}
+    >
+      {/* Background glow on hover */}
+      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 to-cyan-500/0 group-hover:from-cyan-500/10 group-hover:to-cyan-500/5 transition-all duration-200" />
+      <span className="relative z-10 group-hover:text-cyan-300 transition-colors duration-300">
+        {skill}
+      </span>
+    </motion.div>
+  );
 
   return (
-    <div id="skills" >
+    <div id="skills" className="relative overflow-hidden">
       <Container>
-        <Title title="Skills" />
+        <div className="text-center mb-20">
+          <Title title="Technical Arsenal" />
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed"
+          >
+            Crafting digital experiences with modern technologies. Each
+            percentage reflects my proficiency and dedication to mastering these
+            tools.
+          </motion.p>
+        </div>
 
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-gray-300/70 max-w-3xl mx-auto mb-8 md:mb-14 text-center"
-        >
-          I not only work with these technologies but excel in using them with
-          best practices to deliver high-quality results. I have been working
-          with all these skills to build most of my projects.
-        </motion.p>
+        {/* Enhanced Main Skills Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+          {skillCategories.map((category, categoryIndex) => (
+            <motion.div
+              key={category.category}
+              className={`p-8 rounded-3xl backdrop-blur-sm bg-gray-900/40 border ${category.borderColor} hover:border-cyan-400/50 transition-all duration-500 group relative overflow-hidden`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
+              viewport={{ once: true }}
+              // whileHover={{ y: -8, scale: 1.02 }}
+              whileHover={{
+                y: -8,
+                scale: 1.02,
+                transition: {
+                  type: "spring",
+                  stiffness: 100,
+                  damping: 14,
+                  duration: 0.6, // smoother and slower
+                  ease: "easeInOut",
+                },
+              }}
+            >
+              {/* Card glow effect */}
+              <div
+                className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl`}
+              ></div>
 
-        {/* Skills Grid */}
+              <div className="flex items-center mb-8">
+                <div
+                  className={`w-3 h-10 bg-gradient-to-b ${category.color} rounded-full mr-4`}
+                ></div>
+                <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors duration-300">
+                  {category.category}
+                </h3>
+              </div>
+
+              <div className="space-y-6">
+                {category.skills.map((skill, index) => (
+                  <SkillBar
+                    key={skill.name}
+                    skill={skill}
+                    color={category.color}
+                  />
+                ))}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Enhanced Additional Skills Cloud */}
         <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8"
+          className="text-center"
         >
-          {skills.map((skill) => {
-            const IconComponent = icons[skill.icon];
-            return (
+          <h3 className="text-2xl font-bold text-main mb-10">Also Work With</h3>
+          <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
+            {[
+              "React Query",
+              "Redux Toolkit",
+              "React Router",
+              "Axios",
+              "JWT",
+              "Firebase",
+              "REST APIs",
+              "VS Code",
+              "Figma",
+              "Netlify",
+              "Vercel",
+              "Postman",
+              "ES6+",
+              "Responsive Design",
+              "UI/UX Principles",
+            ].map((skill, index) => (
+              <SkillPill key={skill} skill={skill} index={index} />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Enhanced Stats Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-16 border-t border-gray-800"
+        >
+          {[
+            { number: "20+", label: "Projects Built" },
+            { number: "15k+", label: "Lines of Code" },
+            { number: "100%", label: "Dedication" },
+            { number: "∞", label: "Passion for Code" },
+          ].map((stat, index) => (
+            <div key={stat.label} className="text-center group">
               <motion.div
-                variants={item}
-                whileHover={{
-                  scale: 1.1,
-                  rotate: 3,
-                  boxShadow: `0 0px 20px ${skill.color}`,
+                className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-main/80 to-main bg-clip-text text-transparent mb-3 group-hover:from-cyan-300 group-hover:to-blue-300 transition-all duration-300"
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 200,
+                  delay: index * 0.1,
                 }}
-                className="rounded-xl"
-                whileTap={{ scale: 0.95 }}
-                key={skill.id}
+                viewport={{ once: true }}
               >
-                <motion.div className="flex flex-col items-center justify-center bg-black/10 border hover:border-none border-gray-700 rounded-xl p-4 sm:p-6 transition-all duration-300 hover:border-main/60">
-                  {IconComponent ? (
-                    <IconComponent size={45} color={skill.color} />
-                  ) : (
-                    <p className="text-red-500">Missing: {skill.icon}</p>
-                  )}
-                  <p className="mt-3 text-center font-medium text-base sm:text-lg text-gray-200/80">
-                    {skill.skill}
-                  </p>
-                </motion.div>
+                {stat.number}
               </motion.div>
-            );
-          })}
+              <div className="text-gray-400 text-sm group-hover:text-cyan-300 transition-colors duration-300">
+                {stat.label}
+              </div>
+            </div>
+          ))}
         </motion.div>
       </Container>
     </div>

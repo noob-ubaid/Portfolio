@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import logo from "/logo.png";
+// import logo from "/logo.jpg";
+import logo from "/Profile.jpg";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Container from "../../shared/Container";
@@ -83,7 +84,7 @@ const Navbar = () => {
             </div>
 
             <div className="logo text-3xl">
-              <img className="size-11 ml-3 md:ml-0 rounded-full" src={logo} alt="logo" />
+              <img className="size-11 ml-3 md:ml-0 object-cover bg-center rounded-full" src={logo} alt="logo" />
             </div>
           </div>
 
