@@ -78,7 +78,6 @@ const Skills = () => {
 
   const SkillPill = ({ skill, index }) => (
     <motion.div
-      className="px-4 py-3 rounded-full bg-gray-800/60 backdrop-blur-sm border border-cyan-500/20 text-gray-200 text-sm font-medium hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-200 cursor-default group relative overflow-hidden"
       whileHover={{
         scale: 1.05,
         y: -2,
@@ -88,11 +87,13 @@ const Skills = () => {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       viewport={{ once: true }}
     >
-      {/* Background glow on hover */}
-      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 to-cyan-500/0 group-hover:from-cyan-500/10 group-hover:to-cyan-500/5 transition-all duration-200" />
-      <span className="relative z-10 group-hover:text-cyan-300 transition-colors duration-300">
-        {skill}
-      </span>
+      <div className="px-4 py-3 rounded-full bg-gray-800/60 backdrop-blur-sm border border-cyan-500/20 text-gray-200 text-sm font-medium hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-200 cursor-default group relative overflow-hidden">
+        {/* Background glow on hover */}
+        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 to-cyan-500/0 group-hover:from-cyan-500/10 group-hover:to-cyan-500/5 transition-all duration-200" />
+        <span className="relative z-10 group-hover:text-cyan-300 transition-colors duration-300">
+          {skill}
+        </span>
+      </div>
     </motion.div>
   );
 
@@ -100,7 +101,7 @@ const Skills = () => {
     <div id="skills" className="relative overflow-hidden">
       <Container>
         <div className="text-center mb-20">
-          <Title title="Technical Arsenal" />
+          <Title title="Skills" />
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -124,7 +125,6 @@ const Skills = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
               viewport={{ once: true }}
-              // whileHover={{ y: -8, scale: 1.02 }}
               whileHover={{
                 y: -8,
                 scale: 1.02,
@@ -132,7 +132,7 @@ const Skills = () => {
                   type: "spring",
                   stiffness: 100,
                   damping: 14,
-                  duration: 0.6, // smoother and slower
+                  duration: 0.6,
                   ease: "easeInOut",
                 },
               }}
@@ -205,29 +205,30 @@ const Skills = () => {
           className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-16 border-t border-gray-800"
         >
           {[
-            { number: "20+", label: "Projects Built" },
+            { number: "30+", label: "Projects Built" },
             { number: "15k+", label: "Lines of Code" },
             { number: "100%", label: "Dedication" },
             { number: "∞", label: "Passion for Code" },
           ].map((stat, index) => (
-            <div key={stat.label} className="text-center group">
-              <motion.div
-                className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-main/80 to-main bg-clip-text text-transparent mb-3 group-hover:from-cyan-300 group-hover:to-blue-300 transition-all duration-300"
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 200,
-                  delay: index * 0.1,
-                }}
-                viewport={{ once: true }}
-              >
+            <motion.div
+              key={stat.label}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{
+                type: "spring",
+                stiffness: 200,
+                delay: index * 0.1,
+              }}
+              viewport={{ once: true }}
+              className="text-center group"
+            >
+              <motion.div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-main/80 to-main bg-clip-text text-transparent mb-3 group-hover:from-cyan-300 group-hover:to-blue-300 transition-all duration-300">
                 {stat.number}
               </motion.div>
               <div className="text-gray-400 text-sm group-hover:text-cyan-300 transition-colors duration-300">
                 {stat.label}
               </div>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
       </Container>
