@@ -126,7 +126,7 @@ const Skills = () => {
               viewport={{ once: true }}
               whileHover={{
                 y: -8,
-                scale: 1.02,
+                scale: 1.002,
                 transition: {
                   type: "spring",
                   stiffness: 100,
@@ -178,7 +178,7 @@ const Skills = () => {
           <h3 className="text-2xl font-bold text-main mb-10">Also Work With</h3>
           <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
             {[
-              "React Query",
+              "TanStack Query",
               "Redux Toolkit",
               "React Router",
               "Axios",
@@ -192,7 +192,6 @@ const Skills = () => {
               "Postman",
               "ES6+",
               "Responsive Design",
-              "UI/UX Principles",
             ].map((skill, index) => (
               <SkillPill key={skill} skill={skill} index={index} />
             ))}

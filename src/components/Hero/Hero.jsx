@@ -49,6 +49,18 @@ const Hero = () => {
       <Container>
         <div className="flex items-center justify-between flex-col-reverse lg:flex-row gap-12 py-16 md:py-28 ">
           <div className="flex-1 flex items-center md:items-start justify-center gap-4 md:gap-6 flex-col">
+            <motion.div
+              variants={fadeIn("down", 0.1)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-2 bg-main/10 rounded-full border border-main/20 backdrop-blur-sm"
+            >
+              <div className="w-2 h-2 bg-main rounded-full animate-pulse" />
+              <span className="text-main text-sm font-medium">
+                Available for work
+              </span>
+            </motion.div>
             <motion.h2
               variants={fadeIn("down", 0.11)}
               initial="hidden"
