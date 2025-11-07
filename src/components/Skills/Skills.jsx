@@ -120,7 +120,6 @@ const Skills = () => {
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.category}
-              className={`p-8 rounded-3xl backdrop-blur-sm bg-gray-900/40 border ${category.borderColor} hover:border-cyan-400/50 transition-all duration-500 group relative overflow-hidden`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
@@ -137,28 +136,32 @@ const Skills = () => {
                 },
               }}
             >
-              {/* Card glow effect */}
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl`}
-              ></div>
-
-              <div className="flex items-center mb-8">
+                className={`p-8 rounded-3xl backdrop-blur-sm bg-gray-900/40 border ${category.borderColor} hover:border-cyan-400/50 transition-all duration-500 group relative overflow-hidden`}
+              >
+                {/* Card glow effect */}
                 <div
-                  className={`w-3 h-10 bg-gradient-to-b ${category.color} rounded-full mr-4`}
+                  className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-3xl`}
                 ></div>
-                <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors duration-300">
-                  {category.category}
-                </h3>
-              </div>
 
-              <div className="space-y-6">
-                {category.skills.map((skill, index) => (
-                  <SkillBar
-                    key={skill.name}
-                    skill={skill}
-                    color={category.color}
-                  />
-                ))}
+                <div className="flex items-center mb-8">
+                  <div
+                    className={`w-3 h-10 bg-gradient-to-b ${category.color} rounded-full mr-4`}
+                  ></div>
+                  <h3 className="text-xl font-bold text-white group-hover:text-cyan-300 transition-colors duration-300">
+                    {category.category}
+                  </h3>
+                </div>
+
+                <div className="space-y-6">
+                  {category.skills.map((skill, index) => (
+                    <SkillBar
+                      key={skill.name}
+                      skill={skill}
+                      color={category.color}
+                    />
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
