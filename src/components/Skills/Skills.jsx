@@ -191,6 +191,7 @@ const Skills = () => {
               "Vercel",
               "Postman",
               "ES6+",
+              "Socket.io",
               "Responsive Design",
             ].map((skill, index) => (
               <SkillPill key={skill} skill={skill} index={index} />
