@@ -18,10 +18,17 @@ const Projects = () => {
       description:
         "Career Crafter is an AI-powered networking platform that helps users find jobs, build resumes, create CVs, enhance skills, and connect with professionals through smart, personalized recommendations.",
       features: [
-        "Job seekers can create their resume and CV, and if they already have one, they can check whether it is ATS-friendly",
-        "Job seekers can improve their interview skills through our mock interview feature.",
-        "Users can live chat, video call, and voice call with their connected contacts.",
-        "Users are guided through our AI chatbot feature.",
+        "Job seekers can create their resumes and CVs.",
+        "Job seekers can analyze their skills through our Skill Gap feature.",
+        "If job seekers already have a resume, they can check whether it is ATS-friendly.",
+        "Job seekers can improve their interview skills through our Mock Interview feature.",
+        "Job seekers receive job posts that match their skills and can apply directly.",
+        "Users can chat live, make video calls, and voice calls with their connected contacts.",
+        "Users are guided through our AI Chatbot feature.",
+        "Users receive personalized guidance from our AI Mentor on how to improve their desired skills.",
+        "Users can access more AI features by purchasing our Premium Plan.",
+        "Users can share job posts, and the shared recipients can apply for those jobs.",
+        "Users can save job posts and apply later when ready.",
       ],
       techStack: [
         "React JS",
@@ -38,7 +45,8 @@ const Projects = () => {
         "Firebase",
       ],
       liveLink: "https://careercrafter5.web.app",
-      githubLink: "https://github.com/moshiurrahmandeap11/careerCrafter-client",
+      clientLink: "https://github.com/moshiurrahmandeap11/careerCrafter-client",
+      serverLink: "https://github.com/moshiurrahmandeap11/careerCrafter-ServerV2",
     },
     {
       id: 2,
@@ -66,7 +74,8 @@ const Projects = () => {
         "Firebase",
       ],
       liveLink: "https://dev-forum-by-ubaid.netlify.app",
-      githubLink: "https://github.com/noob-ubaid/devdit-client",
+      clientLink: "https://github.com/noob-ubaid/devdit-client",
+      serverLink: "https://github.com/noob-ubaid/devdit-server",
     },
     {
       id: 3,
@@ -94,7 +103,8 @@ const Projects = () => {
         "Framer Motion",
       ],
       liveLink: "https://social-development-by-ubaid.netlify.app",
-      githubLink: "https://github.com/noob-ubaid/Social-Development",
+      clientLink: "https://github.com/noob-ubaid/Social-Development",
+      serverLink: "https://github.com/noob-ubaid/Social-development-server",
     },
     {
       id: 4,
@@ -119,7 +129,8 @@ const Projects = () => {
         "Axios js",
       ],
       liveLink: "https://recipe-book-by-ubaid.netlify.app",
-      githubLink: "https://github.com/noob-ubaid/Recipe-app",
+      clientLink: "https://github.com/noob-ubaid/Recipe-app",
+      serverLink: "https://github.com/noob-ubaid/Recipe-book-server",
     },
   ];
   return (

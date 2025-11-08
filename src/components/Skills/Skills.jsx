@@ -76,27 +76,6 @@ const Skills = () => {
     </div>
   );
 
-  const SkillPill = ({ skill, index }) => (
-    <motion.div
-      whileHover={{
-        scale: 1.05,
-        y: -2,
-      }}
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      viewport={{ once: true }}
-    >
-      <div className="px-4 py-3 rounded-full bg-gray-800/60 backdrop-blur-sm border border-cyan-500/20 text-gray-200 text-sm font-medium hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-200 cursor-default group relative overflow-hidden">
-        {/* Background glow on hover */}
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 to-cyan-500/0 group-hover:from-cyan-500/10 group-hover:to-cyan-500/5 transition-all duration-200" />
-        <span className="relative z-10 group-hover:text-cyan-300 transition-colors duration-300">
-          {skill}
-        </span>
-      </div>
-    </motion.div>
-  );
-
   return (
     <div id="skills" className="relative overflow-hidden">
       <Container>
@@ -116,7 +95,7 @@ const Skills = () => {
         </div>
 
         {/* Enhanced Main Skills Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 ">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.category}
@@ -175,7 +154,9 @@ const Skills = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h3 className="text-2xl font-bold text-main mb-10">Also Work With</h3>
+          <h3 className="text-2xl font-bold text-main my-6 md:my-10">
+            Also Work With
+          </h3>
           <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
             {[
               "TanStack Query",
@@ -194,7 +175,14 @@ const Skills = () => {
               "Socket.io",
               "Responsive Design",
             ].map((skill, index) => (
-              <SkillPill key={skill} skill={skill} index={index} />
+              <motion.span
+                key={index}
+                className=" px-4 py-2 bg-black/10 backdrop-blur-sm rounded-full text-sm text-white/80 border border-white/20 hover:bg-cyan-400/20 hover:border-cyan-400 transition-colors cursor-pointer"
+                whileHover={{ scale: 1.05, y: -1 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                {skill}
+              </motion.span>
             ))}
           </div>
         </motion.div>

@@ -7,8 +7,8 @@ const Project = ({ project }) => {
   const {
     name,
     liveLink,
-    clientGithubLink,
-    serverGithubLink,
+    clientLink,
+    serverLink,
     img,
     teamProject,
     techStack,
@@ -179,7 +179,7 @@ const Project = ({ project }) => {
   return (
     <>
       <motion.div
-        className="flex flex-col p-6 md:p-8 gap-6 md:gap-8 lg:flex-row items-stretch bg-white/5 backdrop-blur-sm border border-main/30 rounded-2xl overflow-hidden hover:border-main/60 transition-all duration-500  shadow-lg hover:shadow-main/20"
+        className="flex flex-col p-4 md:p-8 gap-6 md:gap-8 lg:flex-row items-stretch bg-white/5 backdrop-blur-sm border border-main/30 rounded-2xl overflow-hidden hover:border-main/60 transition-all duration-500  shadow-lg hover:shadow-main/20"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -210,18 +210,18 @@ const Project = ({ project }) => {
             {/* Project Title */}
             <div className="flex items-center justify-between gap-4">
               <motion.h2
-                className="text-2xl md:text-3xl font-bold text-white"
+                className="text-2xl md:text-3xl md:font-bold font-medium text-white"
                 variants={itemVariants}
               >
                 {name}
               </motion.h2>
               {teamProject && (
                 <motion.span
-                  className="px-4 py-2 bg-main/20 text-main rounded-full border border-main/30 backdrop-blur-sm font-medium text-sm"
+                  className="px-4 py-2 md:px-6 md:py-3 bg-main/20 text-main rounded-full border border-main/30 backdrop-blur-sm font-medium text-[12px] md:text-lg md:font-semibold"
                   variants={itemVariants}
                   whileHover={{ scale: 1.05 }}
                 >
-                  ⚡ Team Project
+                  Team Project
                 </motion.span>
               )}
             </div>
@@ -236,7 +236,7 @@ const Project = ({ project }) => {
 
             {/* Tech Stack */}
             <motion.div variants={itemVariants}>
-              <h3 className="text-xl font-semibold text-white mb-4">
+              <h3 className="text-xl md:font-semibold font-medium text-white mb-4">
                 Technologies Used
               </h3>
               <div className="flex flex-wrap gap-3">
@@ -302,10 +302,10 @@ const Project = ({ project }) => {
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
-              <div className="flex justify-end p-4">
+              <div className="flex justify-end p-2">
                 <motion.button
                   onClick={() => setIsModalOpen(false)}
-                  className="p-3 text-gray-400 hover:text-main transition-colors duration-300 rounded-full hover:bg-main/10"
+                  className="p-3  text-gray-400 hover:text-main transition-colors duration-300 rounded-full hover:bg-main/10"
                   whileHover={{ scale: 1.1, rotate: 90 }}
                   whileTap={{ scale: 0.9 }}
                 >
@@ -314,7 +314,7 @@ const Project = ({ project }) => {
               </div>
 
               {/* Modal Content */}
-              <div className="p-4 md:p-6 space-y-8">
+              <div className="px-4 pb-6 md:px-6 space-y-4 md:space-y-6">
                 {/* Full Width Responsive Image */}
                 <motion.div
                   className="rounded-2xl overflow-hidden"
@@ -331,17 +331,17 @@ const Project = ({ project }) => {
 
                 {/* Project Header */}
                 <motion.div
-                  className="flex flex-row items-center justify-between gap-2"
+                  className="flex flex-row items-center justify-between gap-1"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2 }}
                 >
-                  <h2 className="md:text-3xl text-2xl font-bold text-white">
+                  <h2 className="md:text-3xl text-2xl font-medium md:font-bold text-white">
                     {name}
                   </h2>
                   {teamProject && (
-                    <span className="md:px-6 md:py-3 px-4 py-2 bg-main/20 w-fit text-main rounded-full border border-main/30 md:text-lg text-sm md:font-semibold">
-                      ⚡Team Project
+                    <span className="md:px-6 md:py-3 px-3 py-2 bg-main/20 w-fit text-main rounded-full border border-main/30 md:text-lg text-[12px] md:font-semibold">
+                      Team Project
                     </span>
                   )}
                 </motion.div>
@@ -352,7 +352,7 @@ const Project = ({ project }) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
                 >
-                  <h3 className="md:text-2xl text-xl font-semibold text-white mb-4">
+                  <h3 className="md:text-2xl text-xl md:font-semibold font-medium text-white mb-4">
                     Project Overview
                   </h3>
                   <p className="text-gray-300/80 leading-relaxed md:text-lg">
@@ -366,7 +366,7 @@ const Project = ({ project }) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
                 >
-                  <h3 className="md:text-2xl text-xl font-semibold text-white mb-6">
+                  <h3 className="md:text-2xl text-xl md:font-semibold font-medium text-white mb-6">
                     Key Features
                   </h3>
                   <div className="flex  flex-col gap-4">
@@ -397,22 +397,16 @@ const Project = ({ project }) => {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
                 >
-                  <h3 className="md:text-2xl text-xl font-semibold text-white mb-6">
+                  <h3 className="md:text-2xl text-xl md:font-semibold font-medium text-white mb-6">
                     Technology Stack
                   </h3>
                   <div className="flex flex-wrap gap-4">
                     {techStack.map((tech, index) => (
                       <motion.span
-                        key={index}
-                        className="px-5 py-3 bg-main/10 text-main rounded-xl border border-main/20 backdrop-blur-sm font-medium text-base"
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.7 + index * 0.05 }}
-                        whileHover={{
-                          scale: 1.1,
-                          backgroundColor: "var(--main)",
-                          color: "white",
-                        }}
+                        key={tech}
+                        className=" px-4 py-2 bg-black/10 backdrop-blur-sm rounded-full text-sm text-white/80 border border-white/20 hover:bg-cyan-400/20 hover:border-cyan-400 transition-colors cursor-pointer"
+                        whileHover={{ scale: 1.05, y: -1 }}
+                        whileTap={{ scale: 0.95 }}
                       >
                         {tech}
                       </motion.span>
@@ -422,17 +416,17 @@ const Project = ({ project }) => {
 
                 {/* Action Buttons */}
                 <motion.div
-                  className="flex flex-col sm:flex-row gap-4 pt-8 border-t border-main/20"
+                  className="flex flex-col sm:flex-row gap-4 pt-4 border-t border-main/20"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.8 }}
                 >
-                  {clientGithubLink && (
+                  {clientLink && (
                     <motion.a
-                      href={clientGithubLink}
+                      href={clientLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 px-8 py-4 bg-main/10 text-main rounded-xl font-semibold hover:bg-main hover:text-white transition-all duration-300 flex-1 justify-center border border-main/30"
+                      className="flex items-center gap-3 hover:text-white px-8 py-4 bg-main/10 text-white rounded-xl font-semibold hover:bg-main/30 transition-all duration-300 flex-1 justify-center border border-main/30"
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -441,12 +435,12 @@ const Project = ({ project }) => {
                     </motion.a>
                   )}
 
-                  {serverGithubLink && (
+                  {serverLink && (
                     <motion.a
-                      href={serverGithubLink}
+                      href={serverLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-3 px-8 py-4 bg-main/10 text-main rounded-xl font-semibold hover:bg-main hover:text-white transition-all duration-300 flex-1 justify-center border border-main/30"
+                      className="flex items-center gap-3 hover:text-white px-8 text-white py-4 bg-main/10 rounded-xl font-semibold hover:bg-main/30 transition-all duration-300 flex-1 justify-center border border-main/30"
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.95 }}
                     >
@@ -459,7 +453,7 @@ const Project = ({ project }) => {
                     href={liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-3 px-8 py-4 bg-main text-white rounded-xl font-semibold hover:shadow-lg hover:shadow-main/30 transition-all duration-300 flex-1 justify-center"
+                    className="flex items-center gap-3 hover:text-white px-8 py-4 bg-main/10 text-white rounded-xl font-semibold hover:bg-main/30 transition-all duration-300 flex-1 justify-center border border-main/30"
                     whileHover={{ scale: 1.05, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >

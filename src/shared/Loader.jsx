@@ -18,10 +18,10 @@ const Loader = () => {
           {/* Opening Bracket */}
           <motion.div
             className="text-7xl md:text-8xl font-bold text-main z-20"
-            initial={{ opacity: 0, x: -500 }}
+            initial={{ opacity: 0, x: -400 }}
             animate={{ opacity: 1, x: -60 }}
             transition={{
-              duration: 1,
+              duration: 1.2,
               ease: "easeOut",
             }}
             onAnimationComplete={() => setShowSlash(true)}
@@ -40,12 +40,12 @@ const Loader = () => {
                 rotate: 30,
               }}
               transition={{
-                duration: 2,
+                duration: 1.8,
                 ease: "easeOut",
               }}
               style={{
                 transformOrigin: "center",
-                height: "100vh",
+                height: "90vh",
               }}
             />
 
@@ -58,13 +58,13 @@ const Loader = () => {
                 rotate: 30,
               }}
               transition={{
-                duration: 2,
+                duration: 1.8,
                 ease: "easeOut",
                 delay: 0.1,
               }}
               style={{
                 transformOrigin: "center",
-                height: "100vh",
+                height: "93vh",
               }}
             />
 
@@ -77,13 +77,13 @@ const Loader = () => {
                 rotate: 30,
               }}
               transition={{
-                duration: 2,
+                duration: 1.8,
                 ease: "easeOut",
                 delay: 0.2,
               }}
               style={{
                 transformOrigin: "center",
-                height: "100vh",
+                height: "93vh",
               }}
             />
 
@@ -103,7 +103,7 @@ const Loader = () => {
               }}
               style={{
                 transformOrigin: "center",
-                height: "100vh",
+                height: "93vh",
                 rotate: 30,
               }}
             />
@@ -112,10 +112,10 @@ const Loader = () => {
           {/* Closing Bracket */}
           <motion.div
             className="text-7xl md:text-8xl font-bold text-main z-20"
-            initial={{ opacity: 0, x: 500 }}
+            initial={{ opacity: 0, x: 400 }}
             animate={{ opacity: 1, x: 60 }}
             transition={{
-              duration: 1,
+              duration: 1.2,
               ease: "easeOut",
             }}
           >

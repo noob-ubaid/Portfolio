@@ -157,8 +157,8 @@ const AboutMe = () => {
     "Node.js",
     "MongoDB",
     "Express",
-    "GSAP",
-    "Framer",
+    "Tailwind CSS",
+    "TypeScript",
   ];
 
   return (
