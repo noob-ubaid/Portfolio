@@ -4,15 +4,47 @@ import Title from "../../shared/Title";
 import Project from "./Project";
 import Jobent from "/jobent.png";
 import recipe from "/recipe.png";
+import careerCrafter from "/careerCrafter.png";
 import devdit from "/devdit.png";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../shared/Variants";
 const Projects = () => {
   const allProjects = [
     {
-      id: 3,
+      id: 1,
+      img: careerCrafter,
+      name: "Career Crafter",
+      teamProject: true,
+      description:
+        "Career Crafter is an AI-powered networking platform that helps users find jobs, build resumes, create CVs, enhance skills, and connect with professionals through smart, personalized recommendations.",
+      features: [
+        "Job seekers can create their resume and CV, and if they already have one, they can check whether it is ATS-friendly",
+        "Job seekers can improve their interview skills through our mock interview feature.",
+        "Users can live chat, video call, and voice call with their connected contacts.",
+        "Users are guided through our AI chatbot feature.",
+      ],
+      techStack: [
+        "React JS",
+        "Tailwind CSS",
+        "React Router",
+        "Redux Toolkit",
+        "Stripe",
+        "JWT",
+        "Express JS",
+        "Node JS",
+        "MongoDB",
+        "Socket.io",
+        "Axios JS",
+        "Firebase",
+      ],
+      liveLink: "https://careercrafter5.web.app",
+      githubLink: "https://github.com/moshiurrahmandeap11/careerCrafter-client",
+    },
+    {
+      id: 2,
       img: devdit,
       name: "Devdit",
+      teamProject: false,
       description:
         "Devdit is a dynamic single-page web app that lets users create, discover, and engage in discussions on a variety of topics. It helps people share knowledge and stay connected with community conversations.",
       features: [
@@ -37,9 +69,10 @@ const Projects = () => {
       githubLink: "https://github.com/noob-ubaid/devdit-client",
     },
     {
-      id: 1,
+      id: 3,
       img: Jobent,
       name: "Jovent",
+      teamProject: false,
       description:
         "Jobent is a community-driven platform for discovering, creating, and joining local social development events. It helps people connect with like-minded individuals while contributing to positive change in their communities.",
       features: [
@@ -64,9 +97,10 @@ const Projects = () => {
       githubLink: "https://github.com/noob-ubaid/Social-Development",
     },
     {
-      id: 2,
+      id: 4,
       img: recipe,
       name: "Recipe Book",
+      teamProject: false,
       description:
         "Recipe Book is a trusted platform for food enthusiasts to discover, learn, and share recipes with a vibrant community. Whether you're a beginner or a passionate home chef, Recipe Book is the perfect place to connect and inspire.",
       features: [
@@ -87,7 +121,6 @@ const Projects = () => {
       liveLink: "https://recipe-book-by-ubaid.netlify.app",
       githubLink: "https://github.com/noob-ubaid/Recipe-app",
     },
-    
   ];
   return (
     <div id="projects">

@@ -11,7 +11,7 @@ const Loader = () => {
         className="fixed inset-0 bg-black z-50 flex items-center justify-center overflow-hidden"
         initial={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        transition={{ duration: 0.8, ease: "easeInOut" }}
+        transition={{ duration: 0.5, ease: "easeInOut" }}
       >
         {/* Main loader container */}
         <div className="relative flex items-center justify-center">
@@ -21,7 +21,7 @@ const Loader = () => {
             initial={{ opacity: 0, x: -500 }}
             animate={{ opacity: 1, x: -60 }}
             transition={{
-              duration: 1.2,
+              duration: 1,
               ease: "easeOut",
             }}
             onAnimationComplete={() => setShowSlash(true)}
@@ -48,7 +48,7 @@ const Loader = () => {
                 height: "100vh",
               }}
             />
-            
+
             {/* Inner Glow - Using main color with opacity */}
             <motion.div
               className="w-3 bg-main/60 rounded-full absolute blur-sm"
@@ -67,7 +67,7 @@ const Loader = () => {
                 height: "100vh",
               }}
             />
-            
+
             {/* Outer Glow - Lighter opacity */}
             <motion.div
               className="w-6 bg-main/30 rounded-full absolute blur-lg"
@@ -86,7 +86,7 @@ const Loader = () => {
                 height: "100vh",
               }}
             />
-            
+
             {/* Pulsing Glow Effect */}
             <motion.div
               className="w-8 bg-main/20 rounded-full absolute blur-xl"
@@ -115,7 +115,7 @@ const Loader = () => {
             initial={{ opacity: 0, x: 500 }}
             animate={{ opacity: 1, x: 60 }}
             transition={{
-              duration: 1.2,
+              duration: 1,
               ease: "easeOut",
             }}
           >
@@ -135,7 +135,7 @@ const Loader = () => {
             ease: "easeInOut",
           }}
         />
-        
+
         {/* Additional Glow Particles */}
         <motion.div
           className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-main rounded-full blur-md"

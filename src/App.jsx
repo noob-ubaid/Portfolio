@@ -16,7 +16,7 @@ export default function App() {
   useEffect(() => {
     const timer = setInterval(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 2800);
     return () => clearInterval(timer);
   }, []);
   return (

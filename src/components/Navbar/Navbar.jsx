@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import logo from "/logo.jpg";
-import logo from "/Profile.jpg";
+import logo from "/mylogo.jpg";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Container from "../../shared/Container";
@@ -37,11 +36,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   const handleNavClick = (id) => {
-  const scrollEl = document.querySelector("#scroll-container").__locomotiveScroll;
-  if (scrollEl) {
-    scrollEl.scrollTo(document.getElementById(id));
-  }
-};
+    const scrollEl =
+      document.querySelector("#scroll-container").__locomotiveScroll;
+    if (scrollEl) {
+      scrollEl.scrollTo(document.getElementById(id));
+    }
+  };
 
   const links = (
     <div className="flex items-center flex-col md:flex-row gap-2 md:gap-2">
@@ -73,18 +73,42 @@ const Navbar = () => {
         <div className="navbar py-2.5">
           <div className="navbar-start">
             <div className="dropdown hover:bg-gray-800">
-              <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
+              <div
+                tabIndex={0}
+                role="button"
+                className="btn btn-ghost lg:hidden"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
                 </svg>
               </div>
-              <ul tabIndex={0} className="menu menu-sm dropdown-content bg-gray-800 rounded-box z-10 mt-3 w-52 p-2 shadow">
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content bg-gray-800 rounded-box z-10 mt-3 w-52 p-2 shadow"
+              >
                 {links}
               </ul>
             </div>
 
             <div className="logo text-3xl">
-              <img className="size-11 ml-3 md:ml-0 object-cover bg-center rounded-full" src={logo} alt="logo" />
+              {/* <img
+                className="size-12 ml-3 md:ml-0 object-cover bg-center rounded-full"
+                src={logo}
+                alt="logo"
+              /> */}
+              <h1 className="text-main font-bold text-xl">&lt;Ubaidur /&gt;</h1>
+
             </div>
           </div>
 
@@ -93,7 +117,10 @@ const Navbar = () => {
           </div>
 
           <div className="navbar-end">
-            <a href="#contact" className="text-black px-5 contact py-2.5 rounded-full bg-main">
+            <a
+              href="#contact"
+              className="text-black px-5 contact py-2.5 rounded-full bg-main"
+            >
               Contact
             </a>
           </div>
