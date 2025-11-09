@@ -11,7 +11,7 @@ const Skills = () => {
       skills: [
         { name: "HTML", level: 95 },
         { name: "CSS", level: 90 },
-        { name: "JavaScript", level: 80 },
+        { name: "JavaScript", level: 75 },
         { name: "TypeScript", level: 80 },
       ],
     },
@@ -175,14 +175,22 @@ const Skills = () => {
               "Socket.io",
               "Responsive Design",
             ].map((skill, index) => (
-              <motion.span
+              <motion.p
                 key={index}
-                className=" px-4 py-2 bg-black/10 backdrop-blur-sm rounded-full text-sm text-white/80 border border-white/20 hover:bg-cyan-400/20 hover:border-cyan-400 transition-colors cursor-pointer"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.1,
+                  ease: "easeOut",
+                }}
+                viewport={{ once: true }}
+                className="px-4 py-2 bg-black/10 backdrop-blur-sm rounded-full text-sm text-white/80 border border-white/20 hover:bg-cyan-400/20 hover:border-cyan-400 transition-colors cursor-pointer"
                 whileHover={{ scale: 1.05, y: -1 }}
                 whileTap={{ scale: 0.95 }}
               >
                 {skill}
-              </motion.span>
+              </motion.p>
             ))}
           </div>
         </motion.div>

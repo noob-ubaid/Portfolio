@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
-import logo from "/mylogo.jpg";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Container from "../../shared/Container";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("home");
-
+  const name = "<Ubaidur/>";
   useGSAP(() => {
     gsap.from(".logo", { opacity: 0, y: -20, duration: 0.1 });
     const tl = gsap.timeline();
@@ -102,13 +101,7 @@ const Navbar = () => {
             </div>
 
             <div className="logo text-3xl">
-              {/* <img
-                className="size-12 ml-3 md:ml-0 object-cover bg-center rounded-full"
-                src={logo}
-                alt="logo"
-              /> */}
-              <h1 className="text-main font-bold text-xl">&lt;Ubaidur /&gt;</h1>
-
+              <h1 className="text-main font-bold text-xl">{name}</h1>
             </div>
           </div>
 

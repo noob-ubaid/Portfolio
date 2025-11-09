@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
+import { IoIosArrowForward } from "react-icons/io";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 
 const Loader = () => {
@@ -34,10 +35,10 @@ const Loader = () => {
             {/* Main Slash - Using your main color */}
             <motion.div
               className="w-2 bg-main rounded-full absolute"
-              initial={{ scale: 0, rotate: 30 }}
+              initial={{ scale: 0, rotate: 25 }}
               animate={{
                 scale: showSlash ? 1 : 0,
-                rotate: 30,
+                rotate: 25,
               }}
               transition={{
                 duration: 1.8,
@@ -52,10 +53,10 @@ const Loader = () => {
             {/* Inner Glow - Using main color with opacity */}
             <motion.div
               className="w-3 bg-main/60 rounded-full absolute blur-sm"
-              initial={{ scale: 0, rotate: 30 }}
+              initial={{ scale: 0, rotate: 25 }}
               animate={{
                 scale: showSlash ? 1 : 0,
-                rotate: 30,
+                rotate: 25,
               }}
               transition={{
                 duration: 1.8,
@@ -70,11 +71,11 @@ const Loader = () => {
 
             {/* Outer Glow - Lighter opacity */}
             <motion.div
-              className="w-6 bg-main/30 rounded-full absolute blur-lg"
-              initial={{ scale: 0, rotate: 30 }}
+              className="w-6 bg-main/25 rounded-full absolute blur-lg"
+              initial={{ scale: 0, rotate: 25 }}
               animate={{
                 scale: showSlash ? 1 : 0,
-                rotate: 30,
+                rotate: 25,
               }}
               transition={{
                 duration: 1.8,
@@ -104,7 +105,7 @@ const Loader = () => {
               style={{
                 transformOrigin: "center",
                 height: "93vh",
-                rotate: 30,
+                rotate: 25,
               }}
             />
           </div>

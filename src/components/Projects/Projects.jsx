@@ -46,7 +46,8 @@ const Projects = () => {
       ],
       liveLink: "https://careercrafter5.web.app",
       clientLink: "https://github.com/moshiurrahmandeap11/careerCrafter-client",
-      serverLink: "https://github.com/moshiurrahmandeap11/careerCrafter-ServerV2",
+      serverLink:
+        "https://github.com/moshiurrahmandeap11/careerCrafter-ServerV2",
     },
     {
       id: 2,
@@ -59,7 +60,7 @@ const Projects = () => {
         "Role based access (user and admin)",
         "A user can post 5 posts.if he want to posts more than 5 he has to pay. ",
         "Users can comment on posts and report inappropriate comments.",
-        "User can upvote , downvote and share the post in Whatsapp and Facebook",
+        "User can upvote , downvote to a ",
       ],
       techStack: [
         "React JS",
