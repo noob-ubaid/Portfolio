@@ -22,6 +22,7 @@
     "clsx": "^2.1.1",
     "flowbite-react": "^0.11.8",
     "framer-motion": "^12.19.2",
+    "groq-sdk": "^0.34.0",
     "gsap": "^3.13.0",
     "locomotive-scroll": "^4.1.4",
     "lottie-react": "^2.4.1",

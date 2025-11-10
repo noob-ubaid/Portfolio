@@ -159,7 +159,7 @@ const Contact = () => {
             ></textarea>
             <button
               type="submit"
-              className="bg-main/20 hover:bg-gray-800 cursor-pointer hover:text-main duration-300 flex items-center justify-center flex-row-reverse md:gap-4 gap-2 text-center w-full rounded-md md:px-4 md:py-3 px-2 py-2"
+              className="flex items-center gap-3 hover:text-white px-8 py-4 bg-main/10 text-white rounded-md font-semibold hover:bg-main/30 transition-all duration-300 flex-1 justify-center border border-main/30"
             >
               Send Message
             </button>
